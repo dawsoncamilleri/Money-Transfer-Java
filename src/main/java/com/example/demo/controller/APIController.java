@@ -9,16 +9,8 @@ import java.sql.SQLException;
 @RequestMapping("/api")
 public class APIController {
 
-  @GetMapping("/error")
-    public String error()  {
-        return "hello";
-    }
 
 
-    @GetMapping("/hello")
-    public String hello()  {
-        return "hello";
-    }
 
 
     @GetMapping("/{id}")
@@ -32,7 +24,7 @@ public class APIController {
   @PostMapping("/createUser")
     public String createUser(@RequestBody Account account ) throws SQLException {
         // Here you would normally process the user, e.g., save to date
-      
+
        Account account1 = new Account(account.getAccountHolder(),account.getBalance());
         account1.saveToDb(account1);
 
